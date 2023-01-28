@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <h2>Student Data</h2>
+        <div class="col-lg-8 mx-auto" >
+            <table class="table table-bordered">
+               <thead>
+                <tr>
+                    <th class="text-center">Roll No</th>
+                    <th class="text-center">Photo</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Percentage</th>
+                    <th class="text-center">Edit</th>
+                    <th class="text-center">Delete</th>
+                </tr>
+               </thead>
+               <tbody>
+                <tr *ngFor="let student of students, let i = index ">
+                    <td class="text-center">{{ i+1 }}</td>
+                    <td class="text-center"> <img src="{{ student.avatar }}" width="70"></td>
+                    <td class="text-center">{{ student.name }}</td>
+                    <td class="text-center">{{ student.percentage }}</td>
+                    <td class="text-center"> <button class="btn btn-outline-primary" routerLink="/student/{{student.id}}">Edit</button></td>
+                    <td class="text-center"> <button class="btn btn-outline-danger" (click)="delete(student.id)">Delete</button></td>
+                    
+                </tr>
+               </tbody>
+            </table>
+        </div>
+    </div>
+</div>

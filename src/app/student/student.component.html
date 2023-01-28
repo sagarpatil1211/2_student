@@ -1,0 +1,18 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-lg-6">
+            <div>
+                <form [formGroup]="formdata"  (ngSubmit)="save(formdata.value)">
+                    Name : <span class="text-danger small" *ngIf="formdata.controls.name.touched && formdata.controls.name.invalid">Enter Name</span>
+                    <input type="text" class="form-control my-1" formControlName ="name">
+
+                    Percentage : <span class="text-danger small" *ngIf="formdata.controls.percentage.touched && formdata.controls.percentage.invalid">Enter Percentage</span>
+                    <input type="text" class="form-control mt-1" formControlName = "percentage">
+
+                    <button type="submit" class="btn btn-primary mt-3" [disabled]="formdata.invalid || posting">Save</button>
+    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
